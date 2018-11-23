@@ -1,0 +1,33 @@
+{
+  "name": "1688pic",
+  "version": "1.0.0",
+  "description": "1688商品详情图片下载",
+  "main": "app/main.js",
+  "scripts": {
+    "dev": "electron --inspect .",
+    "debug": "cross-env NODE_ENV=development electron --inspect .",
+    "start": "electron ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/xinconan/1688pic.git"
+  },
+  "keywords": [
+    "1688",
+    "picture"
+  ],
+  "author": "Ben",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/xinconan/1688pic/issues"
+  },
+  "homepage": "https://github.com/xinconan/1688pic#readme",
+  "devDependencies": {
+    "cross-env": "^5.1.5",
+    "electron": "^2.0.0"
+  },
+  "dependencies": {
+    "cheerio": "^1.0.0-rc.2",
+    "request": "^2.85.0"
+  }
+}
