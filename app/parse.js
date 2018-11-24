@@ -1,5 +1,7 @@
 const request = require('request')
 const cheerio = require('cheerio')
+// const iconvLite = require('iconv-lite')
+const fs = require('fs')
 const {downloadImg} = require('./utils')
 const {UA} = require('./const')
 let retryCount = 0;
@@ -103,6 +105,14 @@ async function downAli(link, path, win) {
   win.send('logger','正在请求目标网页');
   getHtml(link,win).then((html)=>{
     const $ = cheerio.load(html)
+    const productTitle = $('#mod-detail-title .d-title').text()
+    path += `/${productTitle}`
+    fs.mkdir(path, function (err) {
+      if (err) {
+        console.log(err)
+        return
+      }
+    })
     // 商品详情页
     if (/detail.1688.com\/offer/.test(link)) {
       // 获取详情图片的下载链接
