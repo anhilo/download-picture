@@ -37,9 +37,11 @@ function getHtml(url,win) {
             reject('重定向次数过多');
           }
         }else{
+          win.send('logger','需要登录');
           resolve(body);
         }
       }else {
+        win.send('logger',error);
         reject(error)
       }
     })
