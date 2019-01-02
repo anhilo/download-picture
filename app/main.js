@@ -44,7 +44,7 @@ function createWindow() {
     win = null;
   });
 
-
+  win.webContents.openDevTools();
   // drawin 就是 MacOS
   if(process.env.NODE_ENV=='development'){
     console.log('开发模式');
